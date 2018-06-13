@@ -3,49 +3,77 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Star Wars - Express</title>
+    <title>Friend Finder - Home</title>
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+    html, body {
+        height:auto;
+    }
+        /* https://css-tricks.com/snippets/css/sticky-footer/ */
+
+        /* Sticky Footer with calc()*/
+
+        .wrapper {
+            min-height: calc(100vh - 50px);
+        }
+
+        .footer {
+            height: 50px;
+            background: #d7dbb1;
+        }
+
+        /* End Sticky Footer */
+    </style>
 </head>
 
 <body>
+    <div class="wrapper">
+        <div class="container">
+            <section>
+                <div class="row">
+                    <div class="text-center my-2 mx-auto">
 
-    <div class="container">
+                        <div class="jumbotron">
+                            <h1>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>riend
+                                <i class="fa fa-facebook" aria-hidden="true"></i>inder</h1>
+                            <hr>
+                            <h2>Answer a few basic questions. </h2>
+                            <h2>Then find the friend with the greatest compatibility!</h2>
+                            <br>
 
-        <div class="jumbotron">
-            <h1>
-                <i class="fa fa-facebook" aria-hidden="true"></i>riend <i class="fa fa-facebook" aria-hidden="true"></i>inder</h1>
-            <hr>
-            <h2>Answer a few basic questions. </h2>
-            <h2>Then find the friend with the greatest compatibility!</h2>
-            <br>
+                            <div>
+                                <a href="/survey">
+                                    <button type="button" class="btn btn-lg btn-primary">
+                                        <h4>
+                                            <span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4>
+                                    </button>
+                                </a>
+                            </div>
 
-            <div>
-                <a href="/survey">
-                    <button type="button" class="btn btn-lg btn-primary">
-                        <h4>
-                            <span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4>
-                    </button>
-                </a>
-            </div>
-
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        <footer class="footer">
-            <div class="container">
-                <p>
-                    <a href="/api/friends">API Friends List</a> |
-                    <a href="https://github.com/jealob/friendfinder">GitHub Repo</a>
-                </p>
-            </div>
-        </footer>
-
     </div>
-
+    <footer class="footer pt-2 pb-1">
+        <div class="container text-center mx-auto">
+            <p>
+                <a href="/api/friends">API Friends List</a> |
+                <a href="https://github.com/jealob/friendfinder">GitHub Repo</a>
+            </p>
+        </div>
+    </footer>
     <script type="text/javascript">
 
     </script>

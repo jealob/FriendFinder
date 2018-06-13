@@ -1,5 +1,2 @@
 #npm packages
 node_modules/*
-
-#dot environment variables
-.env

@@ -34,7 +34,5 @@ module.exports = function (app) {
             console.log(match);
         }
         friendsData.push(req.body);
-      
-        
     });
 }
