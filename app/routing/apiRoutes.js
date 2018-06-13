@@ -6,6 +6,7 @@ let friendsData = require("../data/friends.js");
 module.exports = function (app) {
     app.get("/api/friends", function (req, res) {
         res.json(friendsData);
+        console.log(friendsData);
     });
     app.post("/api/friends", function (req, res) {
         let friendFinder = req.body;
@@ -26,9 +27,14 @@ module.exports = function (app) {
             }
         };
         if (match.name) {
+            console.log(friendFinder);
             res.json(match);
         }
+        else {
+            console.log(match);
+        }
         friendsData.push(req.body);
-        // console.log("data submitted");
+      
+        
     });
 }

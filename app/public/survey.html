@@ -40,7 +40,7 @@
             <strong>Question 1</strong>
         </h3>
         <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
-        <select class="chosen-select" id="q1">
+        <select class="friend-finder" id="q1">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -53,7 +53,7 @@
             <strong>Question 2</strong>
         </h3>
         <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
-        <select class="chosen-select" id="q2">
+        <select class="friend-finder" id="q2">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -67,7 +67,7 @@
             <strong>Question 3</strong>
         </h3>
         <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
-        <select class="chosen-select" id="q3">
+        <select class="friend-finder" id="q3">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -81,7 +81,7 @@
             <strong>Question 4</strong>
         </h3>
         <h4>You rarely do something just out of sheer curiosity.</h4>
-        <select class="chosen-select" id="q4">
+        <select class="friend-finder" id="q4">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -95,7 +95,7 @@
             <strong>Question 5</strong>
         </h3>
         <h4>People can rarely upset you.</h4>
-        <select class="chosen-select" id="q5">
+        <select class="friend-finder" id="q5">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -109,7 +109,7 @@
             <strong>Question 6</strong>
         </h3>
         <h4>It is often difficult for you to relate to other people’s feelings.</h4>
-        <select class="chosen-select" id="q6">
+        <select class="friend-finder" id="q6">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -123,7 +123,7 @@
             <strong>Question 7</strong>
         </h3>
         <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
-        <select class="chosen-select" id="q7">
+        <select class="friend-finder" id="q7">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -136,7 +136,7 @@
             <strong>Question 8</strong>
         </h3>
         <h4>You rarely get carried away by fantasies and ideas.</h4>
-        <select class="chosen-select" id="q8">
+        <select class="friend-finder" id="q8">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -149,7 +149,7 @@
             <strong>Question 9</strong>
         </h3>
         <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
-        <select class="chosen-select" id="q9">
+        <select class="friend-finder" id="q9">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -162,7 +162,7 @@
             <strong>Question 10</strong>
         </h3>
         <h4>You feel more energetic after spending time with a group of people.</h4>
-        <select class="chosen-select" id="q10">
+        <select class="friend-finder" id="q10">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -175,7 +175,7 @@
         <br>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#match-odal"id="submit">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
             <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit</button>
 
@@ -202,11 +202,11 @@
                 </div>
                 <div class="modal-body">
                     <h2 id="match-name"></h2>
-                    <img id="match-img" src="#" alt="no Image">
+                    <img id="match-img" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="">
                     <p id="match-rating"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-match" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-match" data-dismiss="modal" id="match-modal-close">Close</button>
                 </div>
             </div>
         </div>
@@ -214,43 +214,13 @@
     <!-- End modal -->
 
     <script type="text/javascript">
-        // Chosen CSS
-        var config = {
-            ".chosen-select": {},
-            ".chosen-select-deselect": {
-                allow_single_deselect: true
-            },
-            ".chosen-select-no-single": {
-                disable_search_threshold: 10
-            },
-            ".chosen-select-no-results": {
-                no_results_text: "Oops, nothing found!"
-            },
-            ".chosen-select-width": {
-                width: "95%"
-            }
-        };
-
-        for (var selector in config) {
-            $(selector).chosen(config[selector]);
-        }
-
-        // JSON AJAX Call
-        // function runFriendsQuery(currentUser) {
-        //     console.log("runs inside function");
-        //     let currentURL = window.location.origin;
-        //     $.ajax({ url: currentURL + "/api/friends", method: "GET" })
-        //         .done(function (friendsData) {
-
-        //             console.log(friendsData);
-        //         });
-        // }
-
-
         // Capture the form inputs
         $("#submit").on("click", function (event) {
             event.preventDefault();
-            $(this).attr("data-target", "#matchModal");
+            // initialize modal match elements
+            $("#match-name").text("");
+            $("#match-img").attr("src", "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=");
+            $("#match-rating").text("");
 
             // Form validation
             function validateForm() {
@@ -261,17 +231,18 @@
                     }
                 });
 
-                $(".chosen-select").each(function () {
+                $(".friend-finder").each(function () {
                     if ($(this).val() === "") {
                         isValid = false;
                     }
                 });
+                console.log(isValid);
                 return isValid;
             }
 
-            // If all required fields are filled
-            // if (validateForm()) {
-                // Create an object for the user"s data
+            // Validates Input Form
+            if (validateForm()) {
+                // New User Object
                 var userData = {
                     name: $("#name").val(),
                     photo: $("#photo").val(),
@@ -288,25 +259,31 @@
                         $("#q10").val()
                     ]
                 };
-
-                // // AJAX post the data to the friends API.
+                // // AJAX post the data to the friends API endpoint.
                 $.post("/api/friends", userData, function (data) {
-                    console.log(data);
-                    console.log("did it run modal");
                     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
                     $("#match-name").text(data.name);
                     $("#match-img").attr("src", data.photo);
                     $("#match-rating").text(`Match Rating: ${data.matchRating}`);
-    
+
                     // Show the modal with the best match                
                     $("#match-modal").modal("toggle");
                 });
-
+            }
+            else {
+                alert("Please fill out all fields before submitting!");
+            }
+            // clear all input fields
+            $(".form-control").each(function () {
+                $(this).val("");
             });
-        // else {
-        //         alert("Please fill out all fields before submitting!");
-        //     }
-
+            $(".friend-finder-scores").each(function () {
+                $(this).val("");
+            });
+        });
+        $("#match-modal-close").on('click', function () {
+            location.reload();
+        });
     </script>
 </body>
 
