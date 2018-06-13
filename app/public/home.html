@@ -15,45 +15,39 @@
 <body>
 
     <div class="container">
+
         <div class="jumbotron">
-            <h1>Star Wars Express</h1>
-            <h3>The greatest resource in the galaxy for Star Wars statistics!</h3>
+            <h1>
+                <i class="fa fa-facebook" aria-hidden="true"></i>riend <i class="fa fa-facebook" aria-hidden="true"></i>inder</h1>
             <hr>
-            <a href="/">
-                <button class="btn btn-danger btn-lg">
-                    <span class="fa fa-eye"></span> Search Characters</button>
-            </a>
-            <a href="/all">
-                <button class="btn btn-danger btn-lg">
-                    <span class="fa fa-th-list"></span> All Characters</button>
-            </a>
-        </div>
-        <div class="row">
+            <h2>Answer a few basic questions. </h2>
+            <h2>Then find the friend with the greatest compatibility!</h2>
+            <br>
 
+            <div>
+                <a href="/survey">
+                    <button type="button" class="btn btn-lg btn-primary">
+                        <h4>
+                            <span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4>
+                    </button>
+                </a>
+            </div>
 
         </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/friends">API Friends List</a> |
+                    <a href="https://github.com/jealob/friendfinder">GitHub Repo</a>
+                </p>
+            </div>
+        </footer>
+
     </div>
 
     <script type="text/javascript">
-        // Question: What does this code do?
-        $("#add-btn").on("click", function (event) {
-            event.preventDefault();
 
-            var newCharacter = {
-                name: $("#name").val().trim(),
-                role: $("#role").val().trim(),
-                age: $("#age").val().trim(),
-                forcePoints: $("#force-points").val().trim()
-            };
-
-            // Question: What does this code do??
-            $.post("/api/characters", newCharacter)
-                .then(function (data) {
-                    console.log(data);
-                    alert("Adding character...");
-                });
-
-        });
     </script>
 </body>
 
