@@ -16,7 +16,7 @@ let friendsArray = [
         ]
     },
     {
-        name: "Augusta May",
+        name: "Augustine May",
         photo: "http://twistedsifter.files.wordpress.com/2013/09/national-beard-and-mustache-championships-2013-new-orleands-by-greg-anderson-14.jpg?w=539&h=720&zoom=2",
         scores: [
             "3",
