@@ -9,3 +9,4 @@ FriendFinder is a compatibility app; to its core it can work as any form of comp
 * AJAX
 * Bootscrap
 * Custom CSS
+Check out the app by clicking on [here](https://pure-lake-56333.herokuapp.com/)
